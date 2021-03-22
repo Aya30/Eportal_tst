@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.1 on win32)" generated="20210322 14:23:21.533" rpa="false">
+<suite id="s1" name="E-Portal" source="F:\iti\workspace\reboot\E-Portal">
+<suite id="s1-s1" name="Pages" source="F:\iti\workspace\reboot\E-Portal\Pages">
+<suite id="s1-s1-s1" name="Main" source="F:\iti\workspace\reboot\E-Portal\Pages\Main.robot">
+<test id="s1-s1-s1-t1" name="Run_project">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20210322 14:23:21.913" level="INFO">Opening browser 'firefox' to base url 'http://81.10.12.74:100'.</msg>
+<msg timestamp="20210322 14:23:21.915" level="INFO">Firefox driver log is always forced to to: F:\iti\workspace\reboot\E-Portal\geckodriver-24.log</msg>
+<status status="PASS" starttime="20210322 14:23:21.912" endtime="20210322 14:23:39.144"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210322 14:23:42.154" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210322 14:23:39.148" endtime="20210322 14:23:42.154"></status>
+</kw>
+<kw name="Login" library="Loginpage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210322 14:23:44.156" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210322 14:23:42.156" endtime="20210322 14:23:44.156"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:txt_username</arg>
+<arg>${Mail}</arg>
+</arguments>
+<msg timestamp="20210322 14:23:44.157" level="INFO">Typing text 'rb2@rb.rb' into text field 'id:txt_username'.</msg>
+<status status="PASS" starttime="20210322 14:23:44.157" endtime="20210322 14:23:44.213"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:txt_password</arg>
+<arg>${Pw}</arg>
+</arguments>
+<msg timestamp="20210322 14:23:44.214" level="INFO">Typing text 'Pw123456' into text field 'id:txt_password'.</msg>
+<status status="PASS" starttime="20210322 14:23:44.213" endtime="20210322 14:23:44.263"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:btn_login</arg>
+</arguments>
+<msg timestamp="20210322 14:23:44.265" level="INFO">Clicking element 'id:btn_login'.</msg>
+<status status="PASS" starttime="20210322 14:23:44.263" endtime="20210322 14:23:46.045"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210322 14:23:51.047" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210322 14:23:46.045" endtime="20210322 14:23:51.047"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/div[2]/section/div/div/div/div/div[1]/div/div[2]/div[1]/h4[2]</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20210322 14:23:51.075" level="INFO">${msg} = rb2@rb.rb</msg>
+<status status="PASS" starttime="20210322 14:23:51.047" endtime="20210322 14:23:51.075"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${msg}</arg>
+<arg>${Mail}</arg>
+</arguments>
+<status status="PASS" starttime="20210322 14:23:51.075" endtime="20210322 14:23:51.076"></status>
+</kw>
+<status status="PASS" starttime="20210322 14:23:42.155" endtime="20210322 14:23:51.077"></status>
+</kw>
+<status status="PASS" starttime="20210322 14:23:21.911" endtime="20210322 14:23:51.078" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210322 14:23:21.624" endtime="20210322 14:23:51.079"></status>
+</suite>
+<status status="PASS" starttime="20210322 14:23:21.618" endtime="20210322 14:23:51.083"></status>
+</suite>
+<status status="PASS" starttime="20210322 14:23:21.586" endtime="20210322 14:23:51.087"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="E-Portal">E-Portal</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Pages">E-Portal.Pages</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Main">E-Portal.Pages.Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
